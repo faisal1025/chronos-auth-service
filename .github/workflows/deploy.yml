@@ -50,9 +50,10 @@ jobs:
             -e DB_PASSWORD=${{ secrets.USER_DB_PASSWORD }} \
             -e SPRING_PROFILES_ACTIVE=prod \
             -e JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }} \
-            -e KAFKA_JAAS_CONFIG=${{ secrets.KAFKA_JAAS_CONFIG }} \
-            -e KAFKA_PRODUCER_CLIENT=${{ secrets.KAFKA_PRODUCER_CLIENT }} \
-            -e KAFKA_SERVER=${{ secrets.KAFKA_SERVER }} \
-            -e JOB_SERVICE_API=${{ secrets.JOB_SERVICE_API }} \
-            -e USER_SERVICE_API=${{ secrets.USER_SERVICE_API }} \
+            -e JWT_SECRET_KEY="${{ secrets.JWT_SECRET_KEY }}" \
+            -e KAFKA_JAAS_CONFIG="${{ secrets.KAFKA_JAAS_CONFIG }}" \
+            -e KAFKA_PRODUCER_CLIENT="${{ secrets.KAFKA_PRODUCER_CLIENT }}" \
+            -e KAFKA_SERVER="${{ secrets.KAFKA_SERVER }}" \
+            -e JOB_SERVICE_API="${{ secrets.JOB_SERVICE_API }}" \
+            -e USER_SERVICE_API="${{ secrets.USER_SERVICE_API }}" \
             --name app ${{ secrets.DOCKER_USERNAME }}/auth-service-api:${{ github.sha }}
