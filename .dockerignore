@@ -1,0 +1,41 @@
+# Git metadata
+.git
+.gitignore
+
+# Gradle and build outputs
+.gradle
+build
+out
+
+# IDE files
+.idea
+*.iml
+.vscode
+
+# Local env / secrets
+.env
+.env.*
+
+# Docker files not needed in context
+docker-compose.yml
+docker-compose.override.yml
+
+# Logs, temp, caches
+logs
+tmp
+*.log
+coverage
+
+# OS files
+.DS_Store
+Thumbs.db
+
+Entity_Relationship.png
+
+HELP.md
+
+# Key
+*.pem
+
+
+application-dev.properties

@@ -1,0 +1,23 @@
+
+
+name: build gradle application using dockerfile
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout App
+        uses: actions/checkout@v6
+
+      - name: build images
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/chronos-api-gateway:${{ github.sha }} .
+
+    
+
